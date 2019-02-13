@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Adopt A Dog</title>
+  <meta name="description" content="Form Activation and Validation">
+  <meta name="author" content="Cassandra Marshall">
+
+  <link rel="stylesheet" href="assets/styles/site.css">
+
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+<div id="dogImg"></div>
+
+<script>
+	
+	$(document).ready(function () {
+		
+		
+		var jsonURL = "http://localhost:8888/assets/data/dogs.json";
+		$.getJSON( jsonURL, function( json ) {
+		console.log( "JSON Data: " + json.dogs[ 0 ].image );
+			
+			var imgList = "";
+			$.each(json.dogs, function () {
+				imgList += '<li><img src= "' + this.image + '"></li>';
+			});
+			
+			$('#dogImg').append(imgList);
+ 		});
+				
+	});
+</script>
+
+
+</body>
+</html>
