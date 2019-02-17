@@ -3,7 +3,7 @@
 
 /* Globals */
 :root {
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Avenir LT Std 45 Book", Helvetica, Arial, sans-serif;
   --font-serif: Georgia, serif;
   --color-secondary: #333;
   --color-link: #635ac7;
@@ -12,6 +12,22 @@
   font-weight: normal;
   line-height: 1.5;
 }
+
+/* Fonts */
+@font-face {
+font-family: 'Avenir LT Std 45 Book';
+font-style: normal;
+font-weight: normal;
+src: local('/assets/fonts/Avenir LT Std 45 Book'), url('/assets/fonts/AvenirLTStd-Book.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Avenir LT Std 85 Heavy';
+font-style: normal;
+font-weight: normal;
+src: local('/assets/fonts/Avenir LT Std 85 Heavy'), url('/assets/fonts/AvenirLTStd-Heavy.woff') format('woff');
+}
+
 
 body {
   margin: 0 auto;
@@ -29,32 +45,63 @@ a {
 	background-color: #fff;
 }
 
-
-/* Snippets */
-.site-header {
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-  text-align: center;
+header {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
 }
 
-.site-header__quote {
-  color: var(--color);
-  font-family: var(--font-serif);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 460px;
-}
-
-.site-footer {
-  color: var(--color);
-  font-family: var(--font-serif);
-  text-align: center;
+footer {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .container {
 	max-width: 1400px;
 	margin: 0 auto;
 }
+
+
+
+/* Snippets */
+.site-header {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  text-align: left;
+}
+
+.site-header h1 {
+	max-width: 200px;	
+}
+
+.site-header__quote {
+  color: var(--color);
+  font-family: var(--font-sans);
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 460px;
+}
+
+.site-header__quote p { 
+	max-width: 250px;
+	display: inline-block;	
+	padding-right: 40px;
+}
+
+.site-header__quote cite { 
+	max-width: 250px;
+	display: inline-block;	
+}
+
+
+.site-footer {
+  color: var(--color);
+  font-family: var(--font-sans);
+  text-align: left;
+  max-width: 400px;
+}
+
 
 
 /* Homepage Images */

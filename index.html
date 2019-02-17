@@ -8,6 +8,8 @@
   <meta name="description" content="Adopt a Dog">
   <meta name="author" content="Cassandra Marshall">
   <meta name="description" content="A site to display dogs up for adoption at Asana Dog Agency.">
+  <meta name="keywords" content="dog adoption, dogs, adoption, puppies, puppy adoption, puppy">
+
 
   <link rel="stylesheet" href="assets/styles/site.css">
   <script src="assets/js/scripts.js"></script>
@@ -20,63 +22,50 @@
 
 </head>
 <body>
-	<div id="page">
-	<header>
-		<div class="site-header"> 
-			<div class="site-header__quote">
-				<div w3-include-html="assets/snippets/header.html"></div> 
-
-			</div>
-			
-		</div>
-	</header>
+<div id="page">
+		
+	<div w3-include-html="assets/snippets/header.html"></div> 
 	
 <main>
 
 <div class="container">
 <div class="grid" id="dogList">
 
-
 </div>
 </div>
 
 </main>
 
-<footer>
+<div w3-include-html="assets/snippets/footer.html"></div> 
 	
-	<div w3-include-html="assets/snippets/footer.html"></div> 
-	
-</footer>
 
 </div> <! end page -->
 
 <script>
-	"use strict";
 	
 	$(document).ready(function () {
 		
-		
 		var jsonURL = "http://localhost:8888/assets/data/dogs.json";
 		$.getJSON( jsonURL, function( json ) {
-		console.log( "JSON Data: " + json.dogs[ 0 ].small );
 			
 			var imgList = "";
+			var i = 1;
 			$.each(json.dogs, function () {
 
-				imgList += '<div class="thumb" style="background-image:url('+ encodeURI(this.small) +');"></div>';
-
+				imgList += '<div class="thumb" id="'+ i +'" style="background-image:url('+ this.small +');"></div>';
+				i++;
+				
 			});
 			
 			$('#dogList').append(imgList);
 			
- 		});
-			
+ 		});		
 		
 	});
 	
+		
+	
 	includeHTML();
-
-
 
 </script>
 
