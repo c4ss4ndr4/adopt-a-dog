@@ -1,3 +1,6 @@
+/* Styles for Adopt a Dog Written by Cassandra Marshall*/
+/*Code Example for Asana*/
+
 /* Globals */
 :root {
   --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -11,11 +14,19 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
 }
 
 a {
   color: var(--color-link);
+}
+
+#page {
+	margin: 0 auto;
+	min-width: 480px;
+	max-width: 100%;
+	position: relative;
+	background-color: #fff;
 }
 
 
@@ -40,8 +51,18 @@ a {
   text-align: center;
 }
 
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+}
 
-/* Homepage Thumbnails */
+
+/* Homepage Images */
+#dogList {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
 	
 #dogList .thumb {
     margin: 0px 6px 20px;
@@ -53,32 +74,11 @@ a {
     font-size: 14px;
     text-align: center;
     overflow: hidden;
-}
-
-#dogList .thumb .frame {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0px 0px 8px;
-    overflow: hidden;
-    background: #666;
-}
-
-#dogList .thumb .frame a {
-    display: block;
-    margin: 0px -50px;
-    min-height: 300px;
-    overflow: hidden;
-    background: #ccc;
-    position: relative;
-}
-
-#dogList .thumb .frame img {
-    display: block;
-    height: auto;
-    margin: 0px auto;
-    position: absolute;
-    width: 100%;
+    min-height: 340px;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 
@@ -86,13 +86,7 @@ a {
 @media(min-width: 880px) {
 
 #dogList .thumb {	
-	float: none;
-    display: inline-block;
-    margin: 0px 0 20px;
-    width: 30%;
-    height: auto;
-    text-align: left;
-    /*min-height: 340px;*/
+	
 } 	
 	
 }

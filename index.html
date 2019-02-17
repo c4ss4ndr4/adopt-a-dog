@@ -7,39 +7,54 @@
   <title>Adopt A Dog</title>
   <meta name="description" content="Adopt a Dog">
   <meta name="author" content="Cassandra Marshall">
+  <meta name="description" content="A site to display dogs up for adoption at Asana Dog Agency.">
 
   <link rel="stylesheet" href="assets/styles/site.css">
+  <script src="assets/js/scripts.js"></script>
  
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-
+ 
 
 </head>
 <body>
+	<div id="page">
 	<header>
-		
+		<div class="site-header"> 
+			<div class="site-header__quote">
+				<div w3-include-html="assets/snippets/header.html"></div> 
+
+			</div>
+			
+		</div>
 	</header>
 	
 <main>
 
+<div class="container">
 <div class="grid" id="dogList">
 
 
-
-
+</div>
 </div>
 
 </main>
 
 <footer>
+	
+	<div w3-include-html="assets/snippets/footer.html"></div> 
+	
 </footer>
 
+</div> <! end page -->
+
 <script>
+	"use strict";
 	
 	$(document).ready(function () {
-
+		
 		
 		var jsonURL = "http://localhost:8888/assets/data/dogs.json";
 		$.getJSON( jsonURL, function( json ) {
@@ -47,7 +62,8 @@
 			
 			var imgList = "";
 			$.each(json.dogs, function () {
-				imgList += '<div class="thumb"><div class="frame"><a href=""><img src= "' + this.small + '"></a></div></div>';
+
+				imgList += '<div class="thumb" style="background-image:url('+ encodeURI(this.small) +');"></div>';
 
 			});
 			
@@ -58,7 +74,7 @@
 		
 	});
 	
-	
+	includeHTML();
 
 
 
