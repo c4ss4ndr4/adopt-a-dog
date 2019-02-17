@@ -42,8 +42,25 @@ a {
 
 
 /* Homepage Thumbnails */
-	
-#dogList .thumb {
+
+.grid-item{ 
+	width: 20%; 
+	}
+.grid-item--width2{ 
+	width: 40%; 
+	}
+
+.grid-item img { 
+	max-width: 300px; 
+	}
+.grid-item--width2 img { 
+	max-width: 400px; 
+	}
+
+
+/*
+	<div class="thumb"><div class="frame"><a href=""><img src= "' + this.image + '"></a></div></div>';
+	#dogList .thumb {
     margin: 0px 6px 20px;
     padding: 0px;
     float: none;
@@ -55,18 +72,19 @@ a {
     overflow: hidden;
 }
 
-#dogList .thumb .frame {
+/*#dogList .thumb .frame {
     display: block;
     width: 100%;
     height: auto;
     margin: 0px 0px 8px;
     overflow: hidden;
     background: #666;
-}
+}*/
 
-#dogList .thumb .frame a {
+/*#dogList .thumb .frame a {
     display: block;
     margin: 0px -50px;
+    width: 380px;
     min-height: 300px;
     overflow: hidden;
     background: #ccc;
@@ -75,17 +93,45 @@ a {
 
 #dogList .thumb .frame img {
     display: block;
+    max-width: 400px;
     height: auto;
     margin: 0px auto;
     position: absolute;
-    width: 100%;
+}*/
+
+#dogList li.thumb {	
+	float: left;
+    margin: 0px 2.5% 20px;
+    width: 45%;
+    height: auto;
+    text-align: left;
+    position: relative;
+    /*min-height: 340px;*/
+    list-style: none;
+} 
+
+#dogList li.thumb a {	
+	display: block;
+	/*margin: 0px -50px;*/
+	overflow: hidden;
+	background: #ccc;
+	position: relative;
+	min-height: 200px
+}
+
+#dogList li.thumb img {
+	max-width: 280px;
+	width: 100%;
+	position: absolute;
+	object-position: 0% 50%;
+	object-fit: fill;
 }
 
 
 /********* Desktop Media Breakpoint **********/
 @media(min-width: 880px) {
 
-#dogList .thumb {	
+#dogList li.thumb {	
 	float: none;
     display: inline-block;
     margin: 0px 0 20px;
