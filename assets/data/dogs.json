@@ -2,6 +2,7 @@
   "dogs": [
   {
 	  "imgName": "1.jpg",
+	  "name": "Fido",
       "raw": "/assets/images/raw/1.jpg",
       "small": "/assets/images/small/1.jpg",
       "medium": "/assets/images/medium/1.jpg",
@@ -11,6 +12,7 @@
 
     {
 	   "imgName": "2.jpg",
+	   "name": "Ears",
        "raw": "/assets/images/raw/2.jpg",
       "small": "/assets/images/small/2.jpg",
       "medium": "/assets/images/medium/2.jpg",
@@ -20,6 +22,7 @@
 
     {
 	  "imgName": "3.jpg",
+	  "name": "Snow",
       "raw": "/assets/images/raw/3.jpg",
       "small": "/assets/images/small/3.jpg",
       "medium": "/assets/images/medium/3.jpg",
@@ -29,6 +32,7 @@
 
     {
 	  "imgName": "4.jpg",
+	  "name": "Spot",
 	  "raw": "/assets/images/raw/4.jpg",
       "small": "/assets/images/small/4.jpg",
       "medium": "/assets/images/medium/4.jpg",
@@ -38,6 +42,7 @@
 
     {
 	  "imgName": "5.jpg",
+	  "name": "Lucas",
       "raw": "/assets/images/raw/5.jpg",
       "small": "/assets/images/small/5.jpg",
       "medium": "/assets/images/medium/5.jpg",
@@ -47,6 +52,7 @@
 
     {
 	  "imgName": "6.jpg",
+	  "name": "Bella",
 	  "raw": "/assets/images/raw/6.jpg",
       "small": "/assets/images/small/6.jpg",
       "medium": "/assets/images/medium/6.jpg",
@@ -56,6 +62,7 @@
 
     {
 	  "imgName": "7.jpg",
+	  "name": "Fetch",
 	  "raw": "/assets/images/raw/7.jpg",
       "small": "/assets/images/small/7.jpg",
       "medium": "/assets/images/medium/7.jpg",
@@ -65,6 +72,7 @@
 
     {
 	  "imgName": "8.jpg",
+	  "name": "Lucy",
 	  "raw": "/assets/images/raw/8.jpg",
       "small": "/assets/images/small/8.jpg",
       "medium": "/assets/images/medium/8.jpg",
@@ -74,6 +82,7 @@
 
     {
 	  "imgName": "9.jpg",
+	  "name": "Luna",
       "raw": "/assets/images/raw/9.jpg",
       "small": "/assets/images/small/9.jpg",
       "medium": "/assets/images/medium/9.jpg",
@@ -83,6 +92,7 @@
 
     {
 	  "imgName": "10.jpg",
+	  "name": "Holly",
       "raw": "/assets/images/raw/10.jpg",
       "small": "/assets/images/small/10.jpg",
       "medium": "/assets/images/medium/10.jpg",
@@ -92,6 +102,7 @@
 
     {
 	  "imgName": "11.jpg",
+	  "name": "Daisy",
       "raw": "/assets/images/raw/11.jpg",
       "small": "/assets/images/small/11.jpg",
       "medium": "/assets/images/medium/11.jpg",
@@ -101,6 +112,7 @@
 
     {
 	  "imgName": "12.jpg",
+	  "name": "Baley",
       "raw": "/assets/images/raw/12.jpg",
       "small": "/assets/images/small/12.jpg",
       "medium": "/assets/images/medium/12.jpg",
@@ -110,6 +122,7 @@
 
     {
 	  "imgName": "13.jpg",
+	  "name": "Sadie",
       "raw": "/assets/images/raw/13.jpg",
       "small": "/assets/images/small/13.jpg",
       "medium": "/assets/images/medium/13.jpg",
@@ -119,6 +132,7 @@
 
     {
 	  "imgName": "14.jpg",
+	  "name": "Smokey",
       "raw": "/assets/images/raw/14.jpg",
       "small": "/assets/images/small/14.jpg",
       "medium": "/assets/images/medium/14.jpg",
@@ -128,6 +142,7 @@
 
     {
 	  "imgName": "15.jpg",
+	  "name": "Gretchen",
       "raw": "/assets/images/raw/15.jpg",
       "small": "/assets/images/small/15.jpg",
       "medium": "/assets/images/medium/15.jpg",

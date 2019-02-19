@@ -29,9 +29,16 @@
 <main>
 
 <div class="container">
+
 <div class="grid" id="dogList">
 
 </div>
+
+<div id="dogEnlarge">
+	
+	
+</div>
+
 </div>
 
 </main>
@@ -52,18 +59,59 @@
 			var i = 1;
 			$.each(json.dogs, function () {
 
-				imgList += '<div class="thumb" id="'+ i +'" style="background-image:url('+ this.small +');"></div>';
+				imgList += '<div class="thumb" id="'+ i +'" style="background-image:url('+ this.small +');" onClick="enlarge(this)"><a  id="'+ i +'" href="#" class="thumbLink">'+ this.imgName +'</a></div>';
 				i++;
 				
 			});
 			
 			$('#dogList').append(imgList);
 			
+			
+			
  		});		
+ 				
 		
 	});
 	
+	function enlarge(thumb_id) {
+			
+			var id = $(thumb_id).attr("id");
+			
+			//console.log( 'clicked' + id);
+			
+			var enlargeImg = "";
+			
+			var jsonURL = "http://localhost:8888/assets/data/dogs.json";
+			
+		 	$.getJSON( jsonURL, function( json ) {
+			 	
+			 	//console.log( "JSON Data: " + json.dogs[ largeID ].large );
+			 	
+			 	var largeID = id - 1;
+			 	
+			 	var largeImage = json.dogs[ largeID ].large;
+				var name = json.dogs[ largeID ].name;
+								
+				enlargeImg += '<div class="large" id="enlarge'+ id +'" onClick="removeImage(this)"><a  id="'+ id +'" href="#" class="thumbLink">'+ name +' <img src="'+ largeImage +'" /></a></div>';
+				
+				$('#dogEnlarge').append(enlargeImg);
+			
+			});	
+
+			
+	}
+	
+	
+	function removeImage(large_id) {
+			
+			var id = $(large_id).attr("id");
+			
+			console.log( 'clicked large ' + id);
+			
+			$("#" + id).remove();
 		
+		}
+	
 	
 	includeHTML();
 
