@@ -52,6 +52,7 @@
 <script>
 	
 	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	//keep console in to double check the window dimensions
 	console.log( 'width ' + w);
 	
 	$(document).ready(function () {
@@ -67,6 +68,7 @@
 			$.each(json.dogs, function () {
 				
 				//change the image size depending on the viewport
+				//small-90 can be substituted to compare resolution and performance in scalability 
 				if (w > 800) {
 					imageThumb = this.medium;
 				} else {
@@ -99,7 +101,7 @@
 				var age = json.dogs[ largeID ].age;
 				var breed = json.dogs[ largeID ].breed;
 	 	
-			 	//change the image size depending on the viewport
+			 	//grab a different image depending on the viewport
 			 	if (w > 800) {
 					largeImage = json.dogs[ largeID ].large;
 				} else {
@@ -112,8 +114,7 @@
 			
 			});		
 	}
-	
-	
+		
 	includeHTML();
 
 </script>

@@ -73,36 +73,52 @@ footer {
 
 /* Header and Footer */
 .header {
-	background: #dbdbdb;
-	margin-bottom: 27px;	
+	background: #fff url(/assets/images/background/repeat-colorblock.jpg);
+	background-repeat: no-repeat;
+    background-size: 12% 600px;
+    background-position: top left;
+ 	margin-bottom: 40px;	
+ 	border-bottom: 2px solid #000;
 }
 
 .site-header {
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-bottom: 20px;
+  padding-top: 26px;
   text-align: center;
   margin: 0 auto;
 }
 
+.site-header div {
+	background: rgba(255, 255, 255, 0.20);
+	max-width: 800px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
 .site-header h1 {
+	color: #000;
+	font-family: var(--font-heading);
+	font-size: 42px;
 	max-width: 200px;	
 	display: block;
 	text-align: left;
 	padding: 0 40px 20px 0px;
 	margin: 0 auto;
-	font-size: var(--font-heading);
+	text-shadow: 1px 1px #dbdbdb;
 }
 
 .site-header__quote {
-  color: var(--color);
-  font-family: var(--font-sans);
-  font-size: var(--font-size);
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 460px;
-  display: inline;
-  text-align: left;
-  margin: 0 auto;
+	/*color: var(--color-title);*/
+	color: #000;
+	font-family: var(--font-sans);
+	font-size: var(--font-size);
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 460px;
+	display: inline;
+	text-align: left;
+	margin: 0 auto;
+	/*text-shadow: 1px 1px #999;*/
 }
 
 .site-header__quote p { 
@@ -119,8 +135,13 @@ footer {
 }
 
 .footer {
-	background-color: #dbdbdb;
-	padding: 50px;
+    padding: 15px 20px 15px;
+    margin-top: 20px;	
+    background: #fff url(/assets/images/background/repeat-colorblock.jpg);
+	background-repeat: no-repeat;
+    background-size: 12% 300px;
+    background-position: bottom left;
+    border-top: 2px solid #000;
 }
 
 .site-footer {
@@ -128,7 +149,6 @@ footer {
   	font-family: var(--font-sans);
   	text-align: left;
   	max-width: 400px;
-  	background-color: #dbdbdb;
 }
 
 
@@ -242,11 +262,20 @@ footer {
 /********* Tablet Media Breakpoint **********/
 @media(min-width: 800px) {
 	
+.header {
+	background: #fff url(/assets/images/background/repeat-colorblock.jpg);
+	background-repeat: no-repeat;
+    background-size: 6% 600px;
+    background-position: top left;
+ 	margin-bottom: 40px;	
+ 	border-bottom: 2px solid #000;
+}
+	
 .site-header h1 {
 	max-width: 200px;	
 	display: inline-block;
 	text-align: left;
-	padding-right: 40px;
+	padding: 10px 40px 0 0;
 }
 
 .site-header__quote p { 
@@ -258,6 +287,16 @@ footer {
 .site-header__quote cite { 
 	max-width: 250px;
 	display: inline-block;	
+}
+
+.footer {
+    padding: 15px 20px 15px;
+    margin-top: 20px;	
+    background: #fff url(/assets/images/background/repeat-colorblock.jpg);
+	background-repeat: no-repeat;
+    background-size: 6% 300px;
+    background-position: bottom left;
+    border-top: 2px solid #000;
 }
 
 
