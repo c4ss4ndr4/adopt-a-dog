@@ -7,7 +7,7 @@
   <title>Adopt A Dog</title>
   <meta name="description" content="Adopt a Dog">
   <meta name="author" content="Cassandra Marshall">
-  <meta name="description" content="Asana Dog Adoption Agency. All available dogs are posted here.">
+  <meta name="description" content="Asana Dog Adoption Agency. Available dogs are posted here.">
   <meta name="keywords" content="dog adoption, dogs, adoption, puppies, puppy adoption, puppy">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -75,11 +75,12 @@
 					imageThumb = this.small;
 				}
 
-				imgList += '<div class="thumb" id="'+ i +'" style="background-image:url('+ imageThumb +');" onClick="enlarge(this)" alt="thumbnail '+ name +'"><a href="#" class="thumbLink">'+ this.name +'</a></div>';
+				imgList += '<div class="thumb" id="'+ i +'" style="background-image:url('+ imageThumb +');" onClick="enlarge(this)" alt="thumbnail dog '+ name +'"><a href="#" class="thumbLink">'+ this.name +'</a></div>';
 				i++;
 				
 			});
 			
+			//for future scalability I would add lazy load to this
 			$('#dogList').append(imgList);
 			
  		});		
@@ -88,6 +89,9 @@
 	function enlarge(thumb_id) {
 		
 			//grabs images for the full size modal	
+			//for performance, a json call is made for each enlarged image, this is faster and scales better
+			//instead of showing and hiding, the images are added to the page and then removed.
+			
 			var id = $(thumb_id).attr("id");
 			var enlargeImg = "";
 			var largeImage;
@@ -108,7 +112,7 @@
 					largeImage = json.dogs[ largeID ].medium;
 				}
 			 								
-				enlargeImg += '<div class="large" id="enlarge'+ id +'" onClick="removeImage(this)"><a  id="'+ id +'" href="#" class="nameLarge"><ul><li class="name">'+ name +'</li><li> '+ gender +'</li><li> '+ age +'</li><li> '+ breed +'</li></ul></a><img alt="large  '+ name +'" src="'+ largeImage +'" /></div>';
+				enlargeImg += '<div class="large" id="enlarge'+ id +'" onClick="removeImage(this)"><a  id="'+ id +'" href="#" class="nameLarge"><ul><li class="name">'+ name +'</li><li> '+ gender +'</li><li> '+ age +'</li><li> '+ breed +'</li></ul></a><img alt="large dog '+ name +'" src="'+ largeImage +'" /></div>';
 				
 				$('#dogEnlarge').append(enlargeImg);
 			

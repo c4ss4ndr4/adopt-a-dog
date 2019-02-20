@@ -28,7 +28,7 @@ function includeHTML() {
   }
 };
 
-	
+//remove the enlarged image	
 function removeImage(large_id) {
 		
 	var id = $(large_id).attr("id");			
