@@ -27,3 +27,12 @@ function includeHTML() {
     }
   }
 };
+
+	
+function removeImage(large_id) {
+		
+	var id = $(large_id).attr("id");			
+	$("#" + id).remove();
+
+}
+

@@ -7,8 +7,9 @@
   <title>Adopt A Dog</title>
   <meta name="description" content="Adopt a Dog">
   <meta name="author" content="Cassandra Marshall">
-  <meta name="description" content="A site to display dogs up for adoption at Asana Dog Agency.">
+  <meta name="description" content="Asana Dog Adoption Agency. All available dogs are posted here.">
   <meta name="keywords" content="dog adoption, dogs, adoption, puppies, puppy adoption, puppy">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
   <link rel="stylesheet" href="assets/styles/site.css">
@@ -24,7 +25,7 @@
 <body>
 <div id="page">
 		
-	<div w3-include-html="assets/snippets/header.html"></div> 
+	<div class="header" w3-include-html="assets/snippets/header.html"></div> 
 	
 <main>
 
@@ -43,74 +44,74 @@
 
 </main>
 
-<div w3-include-html="assets/snippets/footer.html"></div> 
+<div class="footer" w3-include-html="assets/snippets/footer.html"></div> 
 	
 
 </div> <! end page -->
 
 <script>
 	
+	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	console.log( 'width ' + w);
+	
 	$(document).ready(function () {
 		
+		//grabs images for the thumbnails
 		var jsonURL = "http://localhost:8888/assets/data/dogs.json";
 		$.getJSON( jsonURL, function( json ) {
 			
 			var imgList = "";
 			var i = 1;
+			var imageThumb;
+						
 			$.each(json.dogs, function () {
+				
+				//change the image size depending on the viewport
+				if (w > 800) {
+					imageThumb = this.medium;
+				} else {
+					imageThumb = this.small;
+				}
 
-				imgList += '<div class="thumb" id="'+ i +'" style="background-image:url('+ this.small +');" onClick="enlarge(this)"><a  id="'+ i +'" href="#" class="thumbLink">'+ this.imgName +'</a></div>';
+				imgList += '<div class="thumb" id="'+ i +'" style="background-image:url('+ imageThumb +');" onClick="enlarge(this)" alt="thumbnail '+ name +'"><a href="#" class="thumbLink">'+ this.name +'</a></div>';
 				i++;
 				
 			});
 			
 			$('#dogList').append(imgList);
 			
-			
-			
  		});		
- 				
-		
 	});
 	
 	function enlarge(thumb_id) {
-			
+		
+			//grabs images for the full size modal	
 			var id = $(thumb_id).attr("id");
-			
-			//console.log( 'clicked' + id);
-			
 			var enlargeImg = "";
+			var largeImage;
 			
 			var jsonURL = "http://localhost:8888/assets/data/dogs.json";
-			
 		 	$.getJSON( jsonURL, function( json ) {
-			 	
-			 	//console.log( "JSON Data: " + json.dogs[ largeID ].large );
-			 	
-			 	var largeID = id - 1;
-			 	
-			 	var largeImage = json.dogs[ largeID ].large;
+			
+				var largeID = id - 1;
 				var name = json.dogs[ largeID ].name;
-								
-				enlargeImg += '<div class="large" id="enlarge'+ id +'" onClick="removeImage(this)"><a  id="'+ id +'" href="#" class="thumbLink">'+ name +' <img src="'+ largeImage +'" /></a></div>';
+				var gender = json.dogs[ largeID ].gender;
+				var age = json.dogs[ largeID ].age;
+				var breed = json.dogs[ largeID ].breed;
+	 	
+			 	//change the image size depending on the viewport
+			 	if (w > 800) {
+					largeImage = json.dogs[ largeID ].large;
+				} else {
+					largeImage = json.dogs[ largeID ].medium;
+				}
+			 								
+				enlargeImg += '<div class="large" id="enlarge'+ id +'" onClick="removeImage(this)"><a  id="'+ id +'" href="#" class="nameLarge"><ul><li class="name">'+ name +'</li><li> '+ gender +'</li><li> '+ age +'</li><li> '+ breed +'</li></ul></a><img alt="large  '+ name +'" src="'+ largeImage +'" /></div>';
 				
 				$('#dogEnlarge').append(enlargeImg);
 			
-			});	
-
-			
+			});		
 	}
-	
-	
-	function removeImage(large_id) {
-			
-			var id = $(large_id).attr("id");
-			
-			console.log( 'clicked large ' + id);
-			
-			$("#" + id).remove();
-		
-		}
 	
 	
 	includeHTML();
